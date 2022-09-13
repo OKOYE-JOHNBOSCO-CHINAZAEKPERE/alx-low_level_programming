@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "BESTSchool.h"
 
 /**
  * main - Entry point
@@ -12,13 +12,12 @@ int main(void)
 	_putchar('E');
 	_putchar('S');
 	_putchar('T');
-	_putchar(' ');
 	_putchar('S');
 	_putchar('c');
 	_putchar('h');
 	_putchar('o');
-  _putchar('o');
-  _putchar('l');
+  	_putchar('o');
+  	_putchar('l');
 	_putchar('\n');
 	return (0);
 }
