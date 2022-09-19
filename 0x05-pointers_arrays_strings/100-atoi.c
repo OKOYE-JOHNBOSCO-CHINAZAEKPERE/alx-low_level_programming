@@ -1,46 +1,47 @@
 #include "main.h"
-#include "2-strlen.c"
 
 /**
- * _atoi - converts string to integer
- * @s: string to convert
- *
- * Return: returns integer value
+ * is_numerical - check if it is a digit
+ * @n: Number
+ * Return: If is a number, return 1 else return 0
+ */
+int is_numerical(unsigned int n)
+{
+return (n >= '0' &&  n <= '9');
+}
+
+/**
+ * _atoi - convert a string to an integer
+ *@s: String
+ * Return: Return the num
  */
 int _atoi(char *s)
 {
-	int i;
-	int np = 0;
-	int c;
-	int d = 1;
-	int num = 0;
+unsigned int number, i;
+int sign;
 
-	for (i = 0; i < _strlen(s); i++)
-	{
-		if (!(s[i] >= '0' && s[i] <= '9') && c > 0)
-			break;
-		if (s[i] == '-')
-			np--;
-		if (s[i] == '+')
-			np++;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			c++;
-		}
-	}
-	while (c > 0)
-	{
-		num += ((s[i - 1] - '0') * d);
-		i--;
-		c--;
-		d *= 10;
-	}
-	if (np >= 0)
-	{
-		num *= 1;
-	} else
-	{
-		num *= -1;
-	}
-	return (num);
+sign = 1;
+number = 0;
+
+
+
+for (i = 0; s[i] != '\0'; i++)
+{
+if (is_numerical(s[i]))
+{
+number = (s[i] - 48) + number * 10;
+
+if (s[i + 1] == ' ')
+break;
+}
+else if (s[i] == '-')
+{
+sign *= -1;
+}
+
+}
+
+return (number *sign);
+
+
 }
