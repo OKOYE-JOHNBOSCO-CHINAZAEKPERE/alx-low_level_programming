@@ -1,28 +1,22 @@
-<<<<<<< HEAD
-ghghgggh
-=======
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <stddef.h>
 /**
- * print_list - prints a list
- * @h: head of list
- * Return: number of elements
+ * print_list - prints list.
+ * @h: param list
+ * Return: struct
  */
 size_t print_list(const list_t *h)
 {
-	int count = 0;
+	size_t nodelen;
 
+	nodelen = 0;
 	while (h != NULL)
 	{
 		if (h->str == NULL)
-			printf("[0] (nil)\n");
+			printf("[%d] %s\n", 0, "(nil)");
 		else
 			printf("[%d] %s\n", h->len, h->str);
 		h = h->next;
-		count++;
+		nodelen++;
 	}
-	return (count);
+	return (nodelen);
 }
->>>>>>> feb594675244c167f643d3be3675653f149f4c29
