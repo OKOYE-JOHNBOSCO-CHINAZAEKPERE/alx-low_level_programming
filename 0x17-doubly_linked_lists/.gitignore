@@ -1,1 +1,4 @@
-k
+#ignore test files
+*-main.c
+#ignore .exe files
+*.exe
